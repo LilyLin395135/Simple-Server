@@ -1,4 +1,4 @@
-name: Run tests on merge or PR to main
+name: Run tests on push to develop
 
 on:
   push:
@@ -16,10 +16,7 @@ jobs:
           cd temp
           git clone https://github.com/LilyLin395135/Simple-Server.git
           cd Simple-Server
-          git checkout main
-
-      - name: Change to server directory
-        run: cd /app/temp/Simple-Server/server
+          git checkout develop
 
       - name: Install dependencies
         run: |
@@ -30,3 +27,4 @@ jobs:
         run: |
           cd /app/temp/Simple-Server/server
           npm test
+          
